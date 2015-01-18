@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{dirtree}
 \usepackage{fancyvrb}
+\usepackage{indent first}
 
 \newcounter{labquestion}
 \newenvironment{question}{\stepcounter{labquestion} \begin{quote} {\bf
@@ -28,7 +29,7 @@
 \begin{enumerate}
 \item You have {\tt git} installed on your computer.
 \item You have {\tt DrJava} installed on your computer.
-\item You have a folder named {\tt CS121} in your home folder.
+\item You have a folder named {\tt cs121} in your home folder.
 \end{enumerate}
 
 
@@ -36,7 +37,7 @@
 
 In large-scale software projects, the team of developers use {\em version control} software to coordinate their collaborative work on the files in the project.  In this course we will introduce you to github, a popular version control system.  You will obtain copies of the base files for labs and projects, and you will also submit your solutions.  In this lab we will introduce you to the processes needed to interact with github.
 
-Figure~\ref{workflow} shows the {\em workflow} of an assignment for this course.  Files will move between various {\em repositories} and your {\em sandbox}.  A repository is a location that holds all the versions of a file along with the timestamp and username of the person who edited the file.  Your sandbox is where you do your actual work, editing and compiling files.  One of the benefits of this system is that it provides a backup system -- if you accidentally delete a file or make a change you want to undo, you can go back to previous versions from a repository.
+Figure~\ref{workflow} shows the {\em workflow} of an assignment for this course.  Files will move between various {\em repositories} and your {\em sandbox}.  A repository is a location that holds all the versions of a file along with the timestamp and username of the person who edited the file.  Your sandbox is where you do your actual work, i.e.~editing and compiling files.  One of the benefits of this system is that it provides a backup system -- if you accidentally delete a file or make a change you want to undo, you can go back to previous versions from a repository.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=.7]{workflow}}
@@ -47,7 +48,7 @@ Figure~\ref{workflow} shows the {\em workflow} of an assignment for this course.
 \section*{The Steps of Our Workflow}
 
 \begin{enumerate}
-\item {\bf Fork the assignment repository}:  {\em Fork} refers to the FIXME ``fork in the road,'' and means that we are creating an exact duplicate of the repository.  As Figure~\ref{workflow} indicates, we will use github to hold the base repository and your forked version.  These repositories will be stored ``in the cloud'' on github's servers.
+\item {\bf Fork the assignment repository}:  {\em Fork} means that we are creating an exact duplicate of the repository.  As Figure~\ref{workflow} indicates, we will use github to hold the base repository and your forked version.  These repositories will be stored ``in the cloud'' on github's servers.
 
 \item {\bf Clone your github repository}:  {\em Clone} is another way to create an exact duplicate of a repository.  In our workflow, we will clone the repository in your personal github account to the computer where you are working.  This can be an iMac in the computer lab or your personal laptop.
 
@@ -75,11 +76,9 @@ The assignments for this course will be posted at \url{github.com/csci121s15}.  
 \begin{enumerate}
 \item On the csci121s15 github page, click on the Git-Lab.  Then, at the top of the project page click on the \includegraphics[scale=.5]{fork} button.  This will create an exact copy of the repository in your github account.
 
-\item This takes you to your copy of the repository, which you can see both from the URL and from the repository name at the top of the webpage.  In the lower-right, click in the text box labeled ``HTTPS clone URL'' and copy the text (CMD-C).
+\item When you fork the repository, github will take you to your copy, which you can see both from the URL and from the repository name at the top of the webpage.  In the lower-right, click in the text box labeled ``HTTPS clone URL'' and copy the text (CMD-C).
 
-\item Open a terminal and then type {\tt cd cs121} to move to the directory for this class.
-
-\item In the terminal, type {\tt git clone} and then hit CMD-V to paste the HTTPS clone URL you copied earlier.  This command will clone your github repository to your computer.
+\item In a terminal go to your {\tt cs121} directory.  Next, type {\tt git clone} and then hit CMD-V to paste the HTTPS clone URL you copied earlier.  This command will clone your github repository to your computer.
 
 \item {\tt git} assumes you want a copy of the current version of the files, so it automatically performed a checkout.  If you want, you can type command {\tt git checkout}, and it will tell you that you have the up-to-date version of the files.
 \end{enumerate}
@@ -95,15 +94,17 @@ In the terminal, we always have a {\em current directory}, which is the director
 \begin{enumerate}
 \item You should be in the {\tt cs121} directory currently.  If not, type {\tt cd}, which takes you to your home directory, and then {\tt cd cs121}.
 
-\item Use {\tt cd} to go to the {\tt Git-Lab} directory, and then use it again to go to the {\tt Sample} directory\footnote{The terminal has an auto-complete feature where you can type the start of a name, hit the tab key, and it will complete the name for you.  You can also change multiple directories at a time.  A shortcut for what we just did is to type {\tt cd} and the letter 'G' and hit tab to complete the name {\tt Git-Lab}. The terminal adds a '/' to the end of the name because it is a folder, so you can now type 'S' and hit tab again to add sample.  You now have {\tt cd Git-Lab/Sample/}, and when you hit return, you go to the proper directory.}.
+\item Use {\tt cd} to go to the {\tt Git-Lab} directory, and then use it again to go to the {\tt Sample} directory.\footnote{The terminal has an auto-complete feature where you can type the start of a name, hit the tab key, and it will complete the name for you.  You can also change multiple directories at a time.  A shortcut for what we just did is to type {\tt cd} and the letter 'G' and hit tab to complete the name {\tt Git-Lab}. The terminal adds a '/' to the end of the name because it is a folder, so you can now type 'S' and hit tab again to add sample.  You now have {\tt cd Git-Lab/Sample/}, and when you hit return, you go to the proper directory.}
 
-\item Type {\tt ls} to see the files in the folder.  You should see four files lists.  One of the files is a folder.  To see that, type {\tt ls -F}.  The {\tt -F} is a {\tt command line switch} that tells the {\tt ls} command to put a '/' after any file that is a directory.
+\item Type {\tt ls} to see the files in the folder.  You should see four files lists.  One of the files is a folder.  To see that, type {\tt ls -F}.  The {\tt -F} is a {\em command line switch} that tells the {\tt ls} command to put a '/' after any file that is a directory.
 
-\item Use {\tt cd} to go to the Data folder and {\tt ls} to see the files in the folder.
+\item Use {\tt cd} to go to the Data folder and {\tt ls} to see the three files in the folder.
 
 \item Type {\tt cd ..} to go ``up'' one directory -- that is, back to the {\em Sample} directory.
 
 \end{enumerate}
+
+\newpage
 
 We can visualize the directory structure of this folder as:
 
@@ -119,24 +120,22 @@ We can visualize the directory structure of this folder as:
 }
 
 \begin{question}
-The {\tt Git-Lab} directory also contains a directory named {\tt Exercise}.  Using only the commands {\tt cd} and {\tt ls} in the terminal, explore the structure of the {\tt Exercise} directory and draw a picture similar to the one above.
+The {\tt Git-Lab} directory also contains a directory named {\tt Exercise}.  Using only the commands {\tt cd} and {\tt ls} in the terminal, explore the structure of the {\tt Exercise} directory and draw a picture similar to the one above.  Using TextEdit, save the ``image'' as the file {\tt cs121/Git-Lab/Program/tree.txt}.
 \end{question}
 
-Before you continue, feel free to explore the {\tt Git-Lab} directory.  A copy of this lab is included in that folder along with the files used to create the lab.
+Before you continue, feel free to explore the {\tt Git-Lab} directory.
 
 \section*{DrJava}
 
-For the first half of the semester, we will use a programming environment called DrJava.  Please open DrJava and type the following program (changing the name to your name:
+For the first half of the semester, we will use a programming environment called DrJava.  Please open DrJava and type the following program (changing the name to your name):
 
 \code{First.java}
 
-Save the code in the Program directory inside the Git-Lab directory.
-
-You can compile your code by pressing F5, and you can run your program by pressing F2. 
+Save the code as {\tt cs121/Git-Lab/Program/First.java}.  You can compile your code by pressing F5, and you can run your program by pressing F2. 
 
 \section*{Commit, Push, and Pull Request}
 
-When you have a working program, you are ready to submit your program.  During this process you will specify which files to commit and then add a message saying what changes you made.
+When you have a working program, you are ready to submit your lab.  During this process you will specify which files to commit and then add a message saying what changes you made.
 
 First we will configure {\tt git} to auto-complete some values for you and to use a friendly editor:
 
@@ -144,11 +143,11 @@ First we will configure {\tt git} to auto-complete some values for you and to us
 \item Type {\tt git config --global core.editor nano} to make {\tt git} use the {\tt nano} editor instead of {\tt vi}.
 \item Type {\tt git config --global user.name "John Doe"} with your name in quotes to have commits tagged with your name.
 \item Type {\tt git config --global user.email johndoe@example.com} with your email address to have commits tagged with your email address.
-\item Change directory to {\tt Git-Lab/Program} and list the files.  You should see three files, {\tt First.java}, {\tt First.java~}, and {\tt First.class}.  The file ending in a tilde is a backup file, and the .class file is the compiled version.  {\tt bf We only put source files in repositories.}
+\item Change directory to {\tt Git-Lab/Program} and list the files.  You should see three files, {\tt First.java}, {\tt First.java$\sim$}, and {\tt First.class}.  The file ending in a tilde is a backup file, and the .class file is the compiled version.  {\em We only put source files in repositories.}
 \item Type {\tt git add First.java} to tell {\tt git} that the changes to this file should go into the next commit.  If you type {\tt git status} it will show you the status of the files in your repository.
-\item Type {\tt git commit} and an editor window will open.  This is where you write a log message that will be permanently associated with the changes to the file.  In this case, we can simply say that we created this file to practice with Java.
-\item Your changes you added are now in the repository on your computer.  To get them to github, type {\tt git push}.  This will prompt you for your github username and password.
-\item On the github you can now see the changes that you made.  Navigate into the Program folder and click on {\tt First.java} to see how github shows changes.
+\item Type {\tt git commit} and an editor window will open.  This is where you write a log message that will be permanently associated with the changes to the file.  In this case, we can simply say that we created this file to practice with Java.  When you exit, save as the recommended name.
+\item Your changes are now in the repository on your computer.  To get them to github, type {\tt git push}.  This will prompt you for your github username and password.
+\item On the github webpage you can now see the changes that you made.  On the webpage, navigate into the Program folder and click on {\tt First.java} to see how github shows changes.
 \item To send your code to your instructor you will submit a pull request.  On the main github page for this repository, click on the link ``Pull Requests'' on the right side of the page.  Click the green ``New pull request'' button, and make sure the proper changes are being sent.  Click ``Create pull request,'' fill in the title, and comment, and then click ``Create pull request'' to finalize your request.
 \end{enumerate}
 
@@ -156,10 +155,19 @@ Congratulations!  You have successfully completed the first lab.
 
 \section*{More information}
 
-If you want to learn more about using {\tt git} at the command line, try the online tutorial at 
+\begin{itemize}
+\item If you want to learn more about using {\tt git} at the command line, try the online tutorial at:
 
 \url{https://try.github.io/}.
 
+\item As mentioned in the lab, we only want to put {\em source} files in the repository.  You can teach git to ignore files like {\tt First.class} and {\tt First.java~} by adding the following lines to the file {\tt .gitignore} in the {\tt Git-Lab} directory:
+
+\begin{verbatim}
+*.class
+*~
+\end{verbatim}
+
+\end{itemize}
 
 \end{document}
 
