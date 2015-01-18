@@ -75,7 +75,7 @@ The assignments for this course will be posted at \url{github.com/csci121s15}.  
 \begin{enumerate}
 \item On the csci121s15 github page, click on the Git-Lab.  Then, at the top of the project page click on the \includegraphics[scale=.5]{fork} button.  This will create an exact copy of the repository in your github account.
 
-\item This takes you to your copy of the repository, which you can see both from the URL and from the account name at the top of the webpage.  In the lower-right, click in the text box labeled ``HTTPS clone URL'' and copy the text (CMD-C).
+\item This takes you to your copy of the repository, which you can see both from the URL and from the repository name at the top of the webpage.  In the lower-right, click in the text box labeled ``HTTPS clone URL'' and copy the text (CMD-C).
 
 \item Open a terminal and then type {\tt cd cs121} to move to the directory for this class.
 
@@ -136,12 +136,20 @@ You can compile your code by pressing F5, and you can run your program by pressi
 
 \section*{Commit, Push, and Pull Request}
 
-When you have a working program, you are ready to submit your program:
+When you have a working program, you are ready to submit your program.  During this process you will specify which files to commit and then add a message saying what changes you made.
+
+First we will configure {\tt git} to auto-complete some values for you and to use a friendly editor:
 
 \begin{enumerate}
-\item {\bf Commit}
-\item {\bf Push}
-\item {\bf Pull Request}
+\item Type {\tt git config --global core.editor nano} to make {\tt git} use the {\tt nano} editor instead of {\tt vi}.
+\item Type {\tt git config --global user.name "John Doe"} with your name in quotes to have commits tagged with your name.
+\item Type {\tt git config --global user.email johndoe@example.com} with your email address to have commits tagged with your email address.
+\item Change directory to {\tt Git-Lab/Program} and list the files.  You should see three files, {\tt First.java}, {\tt First.java~}, and {\tt First.class}.  The file ending in a tilde is a backup file, and the .class file is the compiled version.  {\tt bf We only put source files in repositories.}
+\item Type {\tt git add First.java} to tell {\tt git} that the changes to this file should go into the next commit.  If you type {\tt git status} it will show you the status of the files in your repository.
+\item Type {\tt git commit} and an editor window will open.  This is where you write a log message that will be permanently associated with the changes to the file.  In this case, we can simply say that we created this file to practice with Java.
+\item Your changes you added are now in the repository on your computer.  To get them to github, type {\tt git push}.  This will prompt you for your github username and password.
+\item On the github you can now see the changes that you made.  Navigate into the Program folder and click on {\tt First.java} to see how github shows changes.
+\item To send your code to your instructor you will submit a pull request.  On the main github page for this repository, click on the link ``Pull Requests'' on the right side of the page.  Click the green ``New pull request'' button, and make sure the proper changes are being sent.  Click ``Create pull request,'' fill in the title, and comment, and then click ``Create pull request'' to finalize your request.
 \end{enumerate}
 
 Congratulations!  You have successfully completed the first lab.
