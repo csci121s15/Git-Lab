@@ -1,2 +1,11 @@
-kljshdflkjahsdf
-
+Exercise
+| - Hal.java
+| - Input
+|    | - bad.in
+|    | - good.in
+| - Main.java
+| - Output
+|    | - bad.out
+|    | - evil.out
+|    | - good.out
+| - Parser.java
