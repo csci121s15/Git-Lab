@@ -143,7 +143,7 @@ First we will configure {\tt git} to auto-complete some values for you and to us
 \item Type {\tt git config --global core.editor nano} to make {\tt git} use the {\tt nano} editor instead of {\tt vi}.
 \item Type {\tt git config --global user.name "John Doe"} with your name in quotes to have commits tagged with your name.
 \item Type {\tt git config --global user.email "johndoe@example.com"} with your email address to have commits tagged with your email address.
-\item Change directory to {\tt Git-Lab/Program} and list the files.  You should see three files, {\tt First.java}, {\tt First.java$\sim$}, and {\tt First.class}.  The file ending in a tilde is a backup file, and the .class file is the compiled version.  {\em We only put source files in repositories.}
+\item Change directory to {\tt Git-Lab/Program} and list the files.  You should see three files, {\tt First.java}, {\tt First.java\textasciitilde}, and {\tt First.class}.  The file ending in a tilde is a backup file, and the .class file is the compiled version.  {\em We only put source files in repositories.}
 \item Type {\tt git add First.java} to tell {\tt git} that the changes to this file should go into the next commit.  You should also add {\tt tree.txt} in the same way.  If you type {\tt git status} it will show you the status of the files in your repository.
 \item Type {\tt git commit} and an editor window will open.  This is where you write a log message that will be permanently associated with the changes to the file.  In this case, we can simply say that we created this file to practice with Java.  When you exit, save as the recommended name.
 \item Your changes are now in the repository on your computer.  To get them to github, type {\tt git push}.  This will prompt you for your github username and password.
@@ -160,7 +160,7 @@ Congratulations!  You have successfully completed the first lab.
 
 \url{https://try.github.io/}.
 
-\item As mentioned in the lab, we only want to put {\em source} files in the repository.  You can teach git to ignore files like {\tt First.class} and {\tt First.java~} by adding the following lines to the file {\tt .gitignore} in the {\tt Git-Lab} directory:
+\item As mentioned in the lab, we only want to put {\em source} files in the repository.  You can teach git to ignore files like {\tt First.class} and {\tt First.java\textasciitilde} by adding the following lines to the file {\tt .gitignore} in the {\tt Git-Lab} directory:
 
 \begin{verbatim}
 *.class
