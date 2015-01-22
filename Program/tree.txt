@@ -1,0 +1,6 @@
+Exercise
+-Input
+	-bad.in
+	-good.in
+-Output
+	
