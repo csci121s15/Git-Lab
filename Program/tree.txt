@@ -1,0 +1,12 @@
+Exercise
+	Hal.java
+	Main.java
+	Parser.java
+	Input
+		bad.in
+		good.in
+	Output
+		bad.out
+		evil.out
+		good.out
+			
