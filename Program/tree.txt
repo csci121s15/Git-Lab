@@ -1,0 +1,11 @@
+Exercise
+|_	Hal.java
+|_	Input
+|	|_	bad.in
+|	|_	good.in
+|_	Main.java
+|_	Output
+|	|_	bad.out
+|	|_	evil.out
+|	|_	good.out
+|_Parser.java
